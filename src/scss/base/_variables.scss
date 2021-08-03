@@ -1,0 +1,14 @@
+// color
+$color-black : #000000;
+$color-header: #56565f;
+$color-yellow : #d29e41;
+$color-text: #fff;
+$color-hot:#ed301c;
+$color-green:#62af26;
+// media break point
+$breakpoints:(
+    'xs': (max-width: 575px),
+    's': (max-width:767px),
+    'md':(max-width:991px),
+    'lg':(max-width:1199px)
+);
