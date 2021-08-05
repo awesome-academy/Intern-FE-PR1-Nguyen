@@ -1,0 +1,9 @@
+mixin productItem(src, alt, name, price, discount,text)
+    .product.col-12.col-md-3
+        +imgProduct(src,alt)
+        .product__text
+            h6.product__text--title=name 
+            h3.product__text--price=price 
+                span.product__text--discount=discount 
+            +button(text)
+            

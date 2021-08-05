@@ -1,0 +1,15 @@
+.button {
+    @include marginY(1.5rem);
+
+    &--link {
+        @include button($color-black, $color-text, uppercase);
+        @include paddingY(0.5rem);
+        @include paddingX(1.5rem);
+        @include cssPrefix(transition, all 0.5s);
+        @include textStyle(0.8rem, $color-text, 400, uppercase);
+
+        &:hover {
+            background-color: $color-yellow;
+        } 
+    }
+}

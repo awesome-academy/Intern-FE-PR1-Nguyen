@@ -1,1 +1,47 @@
-h1 footer
+footer.footer.pt-5 
+    .container.footer__container 
+        .footer__image.d-md-none 
+            img(src="/assets/img/footer-image1.jpg", alt="footer image")
+        .footer__detail.d-md-flex.col-12  
+            .footer__infor.col-lg-3.col-md-6.col-12
+                h3.footer__caption thông tin
+                ul.footer__list
+                    each itemInfor in footerInfor
+                        li.footer__item=itemInfor 
+            .footer__buy.col-lg-3.col-12.col-md-6
+                h3.footer__caption mua hàng
+                ul.footer__list
+                    each itemBuy in footerBuy
+                        li.footer__item=itemBuy 
+            .footer__form.col-lg-3.col-md-6.col-12
+                h3.footer__caption gửi email
+                .form 
+                    label Gửi email cho chúng tôi để được hỗ trợ
+                    .form__input 
+                        input(type="email" placeholder="Enter your email")
+                        +button("gửi")
+                .footer__social.d-flex
+                    i(class="fab fa-twitter")
+                    i(class="fab fa-google-plus-g")
+                    i(class="fab fa-dribbble")
+                    i(class="fab fa-linkedin-in")
+                    i(class="fas fa-rss")
+            .footer__contact.col-lg-3.col-md-6.col-12
+                h3.footer__caption liên hệ
+                ul.footer__list 
+                    li.footer__item 
+                        i(class="fas fa-map-marker")  Tầng 4, Tòa nhà Hanoi Group  Số 442 Đội Cấn, P. Cống Vị, Q. Ba Đình, Hà Nội
+                    li.footer__item  
+                        i(class="fas fa-blender-phone")  (04) 6674 2332  -   
+                         i(class="fas fa-blender-phone")  04) 3786 8904
+                    li.footer__item
+                        i(class="fas fa-blender-phone")  (08) 6680 9686
+                        i(class="fas fa-envelope pl-2")  Support@bizweb.vn
+
+    .footer__copyright.border-top.border-secondary
+            .container.d-md-flex.py-2
+                .footer__copyright--text.col-md-6.col-12
+                    p &copy Copyright 2008-2014 DKT Technology JSC
+                .footer__copyright--img.col-md-6.col-12.text-right 
+                    img(src="/assets/img/footer-image2.jpg", alt="footer image")
+            

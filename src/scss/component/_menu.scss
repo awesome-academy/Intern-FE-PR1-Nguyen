@@ -1,0 +1,64 @@
+.menu {
+    @include position(relative);
+    background-color: $color-black;
+
+    .navbar {
+        &-toggler {
+            color: $color-yellow;
+        }
+
+        .nav-link {
+            @include textStyle(0.7rem, $color-text,400, uppercase);
+            @include marginX(1.3rem);
+
+            &:hover {
+                color: $color-yellow;
+            }
+        }
+
+        &-nav {
+            .nav-item.dropdown {
+                .dropdown-toggle {
+                    color: $color-yellow;
+                }
+            }
+
+            .dropdown {
+                &-item {
+                    @include textStyle(0.8rem, $color-black, 400, capitalize );
+                    
+                    &:nth-child(1) {
+                        @include textStyle(1rem, $color-black, 700, uppercase);
+                        @include marginY(1rem);
+                    }
+                }
+                
+                .dropdown-menu {
+                    @include paddingA(1rem);
+                    @include border(0.1rem, $color-yellow, all);
+                    @include position(absolute, 6.6rem, 0);
+                    z-index: 10;
+                    
+                    img {
+                        @include cssPrefix(object-fit, cover)
+                        max-width: 260px;
+                    }
+
+                    &::before {
+                        @include position(absolute, -1.065rem, 4.125rem);
+                        @include cssPrefix(clip-path, polygon(49% 57%, 0% 100%, 100% 100%));
+                        content:" ";
+                        width: 1rem;
+                        height: 1rem;
+                        background:$color-yellow;
+                    }
+
+                    @include respond-to("s"){
+                        @include position(absolute, 2.6rem, -1rem);
+                        flex-direction: column;
+                    }
+                } 
+            }
+        }
+    }
+}

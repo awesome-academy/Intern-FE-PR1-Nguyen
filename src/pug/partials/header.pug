@@ -1,1 +1,16 @@
-h1 Header
+header(class =`header ${currentUrl === "/" ? "header__absolute" :" "}`)
+    .container 
+        .header__content.d-flex
+            .header__icon.d-lg-none.d-flex
+                label(for="user")
+                    i(class="far fa-user")
+            input(type="checkbox" class="header__check" id="user")
+            .header__menu
+                ul.header__list.d-flex
+                    each headerItem in headerList 
+                        li.header__item.d-flex
+                            a.header--link(href="#")=headerItem 
+            .header__search.d-flex
+                input(type="text" placeholder="Tìm kiếm ở đây... ")
+                i(class="fas fa-search")
+                

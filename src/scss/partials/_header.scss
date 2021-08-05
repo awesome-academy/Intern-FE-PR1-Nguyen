@@ -1,0 +1,99 @@
+.header {
+    @include position(relative);
+    min-width: 100%;
+    background: $color-header;
+    z-index: 10;
+    
+    &__absolute {
+        @include position(absolute, 0);
+    }
+
+    &__content {
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    &__menu, &__list, &__search, &__icon {
+        align-items: center;
+    }
+
+    &__menu {
+        @include respond-to("s"){
+            @include position(absolute, 2rem);
+            display: none;
+        }
+    }
+
+    &__list {
+        @include respond-to("s"){
+            @include paddingX(3rem);
+            flex-direction: column-reverse;
+            background: $color-black;
+        }
+    }
+    
+    &__list, &--link {
+        height: 100%;
+    }
+
+    &__item {
+        @include paddingX(1rem);
+        @include position(relative);
+        
+        &:not(:first-child)::before {
+            @include position(absolute, 0, -0.2rem);
+            @include cssPrefix(transform, translateY(-25%));
+            content: "-";
+            color: $color-text;
+
+            @include respond-to("s"){
+                display: none;
+            }
+        }
+        
+        &:nth-child(3) a {
+            color: $color-yellow;
+        }
+
+        @include respond-to("s") {
+            @include paddingY(1rem);
+        }
+    }
+
+    &--link {
+        @include textStyle(0.6rem, $color-text, 400, none);
+
+        &:hover {
+            color: $color-yellow;
+        }  
+    }
+
+    &__icon {
+        color: $color-text;
+    }
+
+    &__check {
+        @include position(absolute, 0.8rem, 0);
+        opacity: 0;
+
+        &:checked~.header__menu {
+            display: block;
+        }
+    }
+
+    &__search {
+        input {
+            @include textStyle(0.6rem, $color-text, 400, none);
+            @include paddingX(0.9rem);
+            @include border(0.1rem, $color-text, left);
+            font-style: italic;
+            outline: none;
+            border: none;
+            background-color: transparent;
+        }
+
+        i {
+            color: $color-text;
+        }  
+    }
+}

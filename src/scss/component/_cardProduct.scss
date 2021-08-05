@@ -1,0 +1,31 @@
+.product {
+    cursor: pointer;
+    
+    &:hover .productImg__comment {
+        @include cssPrefix(transform, translateY(-15%));
+    }
+
+    .productImg {
+        &__image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &__text {
+        &--title {
+            @include textStyle(1rem, $color-black, 400, uppercase);
+        }
+        
+        &--price {
+            @include textStyle(1.4rem, $color-yellow, 400, uppercase);
+        }
+
+        &--discount {
+            @include marginX(0.3rem);
+            @include textStyle(0.7rem, $color-black, 400, uppercase);
+            text-decoration: line-through;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+mixin imgProduct(src,alt)
+    .productImg(class!=attributes.class)
+        .productImg__image
+            img(src=src, alt=alt class="productImg__image-main")
+        .productImg__comment.d-flex.pt-2
+                p.comment__item.d-flex
+                    i.fas.fa-heart  Yêu thích
+                p.comment__item.mx-3.d-flex
+                    i.fas.fa-signal  So sánh
+                i.fas.fa-external-link-alt
+                

@@ -1,43 +1,49 @@
-const gulp = require("gulp");
-const sass = require("gulp-sass")(require("node-sass"));
-const pug = require("gulp-pug");
-const browserSync = require("browser-sync").create();
+const { src, dest, parallel, watch, series } = require("gulp"),
+  concat = require("gulp-concat"),
+  sass = require("gulp-sass")(require("node-sass")),
+  pug = require("gulp-pug"),
+  browserSync = require("browser-sync").create();
 
-sass.compiler = require("node-sass");
-
-const path = {
-  styles: {
-    all: "src/scss/**/*.scss",
-    src: "src/scss/style.scss",
-    dest: "assets/css/",
-  },
-  pug: {
-    all: "src/**/*.pug",
-    src: "src/pug/pages/*.pug",
-    dest: "./",
-  },
+const FilesPath = {
+  sassFiles: "src/scss/*.scss",
+  jsFiles: "js/*.js",
+  htmlFiles: "src/pug/pages/*.pug",
 };
+const { sassFiles, jsFiles, htmlFiles } = FilesPath;
 
-function startServer() {
-  browserSync.init({
-    server: {
-      baseDir: "./",
-    },
-  });
-  gulp.watch(path.styles.all, styles);
-  gulp.watch(path.pug.all, buildHTML);
-  gulp.watch(path.styles.all).on("change", browserSync.reload);
-  gulp.watch(path.pug.all).on("change", browserSync.reload);
+function sassTask() {
+  return src(sassFiles)
+    .pipe(sass())
+    .pipe(concat("style.css"))
+    .pipe(dest("dist/css"))
+    .pipe(browserSync.stream());
 }
 
-function styles() {
-  return gulp
-    .src(path.styles.src)
-    .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest(path.styles.dest));
-}
-function buildHTML() {
-  return gulp.src(path.pug.src).pipe(pug()).pipe(gulp.dest(path.pug.dest));
+function htmlTask() {
+  return src(htmlFiles)
+    .pipe(pug({ pretty: true }))
+    .pipe(dest("dist"))
+    .pipe(browserSync.stream());
 }
 
-gulp.task("default", startServer);
+function jsTask() {
+  return src(jsFiles).pipe(concat("all.js")).pipe(dest("dist/js"));
+}
+
+function assetsTask() {
+  return src("assets/**/*").pipe(dest("dist/assets"));
+}
+
+function serve() {
+  browserSync.init({ server: { baseDir: "./dist" } });
+  watch(sassFiles, sassTask);
+  watch(jsFiles, jsTask);
+  watch(htmlFiles, htmlTask);
+}
+
+exports.js = jsTask;
+exports.sass = sassTask;
+exports.html = htmlTask;
+exports.assets = assetsTask;
+exports.default = series(parallel(htmlTask, sassTask, jsTask, assetsTask));
+exports.serve = series(serve, parallel(htmlTask, sassTask, jsTask, assetsTask));

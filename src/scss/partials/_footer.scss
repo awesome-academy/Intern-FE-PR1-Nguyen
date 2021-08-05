@@ -1,0 +1,96 @@
+.footer {
+    &__detail {
+        flex-wrap: wrap;
+    }
+
+    &__image {
+        @include respond-to("s"){
+            display: none;
+        }
+    }
+    
+    &__caption {
+        @include paddingY(1rem);
+        @include textStyle(1rem, $color-black, 700, uppercase);
+    }
+
+    &__item {
+        @include marginY(0.5rem);
+        @include textStyle(0.8rem, $color-gray, 400, uppercase);
+    }
+
+    &__social {
+        .fab, .fas {
+            @include marginY(0.5rem);
+            margin-right: 1rem;
+        }
+
+        .fa-google-plus-g {
+            color: $color-yellow;
+        }
+    }
+
+    &__form {
+        .form {
+            label {
+                @include textStyle(0.8rem, $color-gray, 400, none);
+            }
+
+            &__input {
+                @include position(relative);
+
+                input {
+                    width: 100%;
+
+                    &::-webkit-input-placeholder {
+                        @include textStyle(0.7rem, $color-gray, 400, none);
+                    }
+                      
+                    &:-ms-input-placeholder {
+                        @include textStyle(0.7rem, $color-gray, 400, none);
+                    }
+                      
+                    &::placeholder {
+                        @include textStyle(0.7rem, $color-gray, 400, none);
+                    }
+                }
+
+                .button {
+                    @include position(absolute, 0, null, 0, null);
+                    height: 100%;
+                    margin: 0;
+
+                    &--link {
+                        display: block;
+                        height: 100%;
+                        padding-top: 0.3rem;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__contact {
+        .footer__item {
+            @include textStyle(0.8rem, $color-gray, 400, none);
+            line-height: 1.5rem;
+
+            .fa-envelope {
+                color: $color-yellow;
+            }
+        }
+    }
+
+    &__copyright {
+        justify-content: space-between;
+        
+        &--text {
+            @include textStyle(0.8rem, $color-gray, 400, none);
+        }
+
+        @include respond-to("s") {
+            text-align: center;
+        }
+    }
+}

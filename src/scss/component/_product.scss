@@ -1,0 +1,29 @@
+.productImg {
+    @include position(relative);
+    overflow: hidden;
+
+    &__image {
+        @include position(relative);
+        margin-bottom: 2rem;
+        overflow: hidden;
+        
+        &::before {
+            @include position(absolute, 7%, 7%);
+            content: " ";
+            width: 6rem;
+            height: 6rem;
+            background: url("/assets/img/tag1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+    
+    &__comment {
+        @include position(absolute, null, 0, 0, 0);
+        @include button($color-black, $color-header, capitalize);
+        @include cssPrefix(transform, translateY(100%));
+        @include cssPrefix(transition, all 0.5s);
+        width: 100%;
+        justify-content: center;
+    }
+}
