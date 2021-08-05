@@ -2,5 +2,80 @@ extend ../base/base.pug
 block toppage
     - const title = "Home"
     - const currentUrl = "/"
+block banner 
+    +banner("/assets/img/banner.jpg", "Home banner")
 block content
-    h1  hello world10
+    section.intro
+        each bgItem in bgIntro
+            img(src=bgItem.src, alt=bgItem.alt class=bgItem.alt)
+            
+        .container.intro__container
+            .intro__content.text-center
+                +introHead("Giới thiệu","heading")
+                p.col-md-11.col-12.m-auto Mriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui faciteorum claritatem. Investigtiones demonstraverunt lectores legere me lius quod ii legunt saepius.Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putam
+                +button("Xem Thêm")
+
+            .intro__product
+                img(src="/assets/img/home-image1.jpg", alt="home image" class="intro__product--primary")
+                .intro__details.d-md-flex.d-flex.mx-auto
+                    .detail__image.text-center
+                        +imgProduct("/assets/img/Product/14.jpg", "product 14")(class="image--primary")
+                    .detail__content
+                        +introHead("RƯỢU NHO NĂM 1987","title")
+                        h3 300.000Đ
+                        +button("add to cart")
+                        p Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+                        ul.detail__time 
+                            li.detail__time--item 334 <br> 
+                                span ngày 
+                            li.detail__time--item 26<br>
+                                span giờ 
+                            li.detail__time--item 60 <br> 
+                                span phút 
+                            li.detail__time--item 15 <br>
+                                span giây 
+
+    section.newProducts.py-5
+        .container.newProducts__container.text-center
+            .newProducts__title
+                +introHead("sản phẩm mới", "heading")
+            .newProducts__list.d-md-flex.col-12
+                each productItem in productList
+                    +productItem(productItem.src,productItem.alt,"rượu vang đà lạt", "370.000đ", "450.000đ", "add to card")
+
+    section.collection
+        ul.collection__list.row 
+            each collectionItem in collectionList
+                li.collection__list--item
+                    img(src=collectionItem.src, alt=collectionItem.alt)
+                    .item--hover    
+                        img(src="/assets/img/hover1.png", alt="collection hover")
+
+    section.newProducts.py-5.col-12
+        .container.newProducts__container.text-center
+            .newProducts__title
+                +introHead("sản phẩm mới", "heading")
+            .newProducts__list.d-md-flex.col-12
+                each productItem in productList
+                    +productItem(productItem.src,productItem.alt,"rượu vang đà lạt", "370.000đ", "450.000đ", "add to card")
+
+    section.blogCustomer 
+        .container
+            .row  
+                .blogContainer.col-md-8.col-12.text-center
+                    +introHead("tin tức và blog", "heading")
+                    .d-md-flex.mt-4
+                        each itemBlog in homeBlog
+                            +cardBlog(itemBlog.name, itemBlog.alt, itemBlog.title, itemBlog.sub, itemBlog.desc)
+                .customerContainer.col-md-4.col-12.text-center
+                    +introHead("khách hàng", "heading")
+                    .customerContainer__content 
+                        .customerContainer__content--icon
+                            img(src="/assets/img/quote-icon.png", alt="customer image")
+                        .customerContainer__content--text.mt-2
+                            p Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long ...
+                            a(href="#" class="card--link") Read more 
+                        .customerContainer__content--image.mx-auto
+                            img(src="/assets/img/home-image12.jpg", alt="customer image")
+                        p.customer--title giang lt
+                        span.customer--sub Graphic design

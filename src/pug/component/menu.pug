@@ -1,0 +1,23 @@
+section.menu 
+    .container 
+        nav(class="navbar navbar-expand-lg")  
+            a(class="navbar-brand" href="#")
+                img(src="/assets/img/logo-primary.png", alt="logo page")
+            button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation")
+                i(class="fas fa-bars fa-2x")
+            div(class="collapse navbar-collapse" id="navbarNavDropdown")
+                ul.navbar-nav
+                    each itemNav in navList 
+                        if itemNav.isDropdown == true
+                            li.nav-item.dropdown
+                                a(class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")=itemNav.name
+                                div(class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink")
+                                    .list__dropdown.d-md-flex
+                                        +dropdownMega
+                                        +dropdownMega
+                                        +dropdownMega
+                                        img( class="" src="/assets/img/home-image7.jpg", alt="menu image")
+                        else 
+                            li.nav-item 
+                                a(class="nav-link" href=itemNav.href)=itemNav.name 
+                                                           

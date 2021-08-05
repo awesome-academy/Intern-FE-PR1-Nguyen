@@ -1,0 +1,65 @@
+.cardBlog {
+    &__image {
+        @include position(relative);
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            @include cssPrefix(object-fit, cover);
+            width: 100%;
+            max-height: 12rem;
+        }
+
+        i {
+            @include position(absolute, 60%, 60%);
+            @include cssPrefix(transform,translate(-50%, -50%));
+            @include cssPrefix(transition, all 0.5s);
+            @include paddingA(1rem);
+            color: $color-gray;
+            background: $color-text;
+            border-radius: 2rem;
+            opacity: 0;
+        }
+
+        &:hover i {
+            @include position(absolute, 50%, 50%);
+            @include cssPrefix(transform,translate(-50%, -50%));
+            opacity: 1;
+            z-index: 10;
+        }
+
+        &::after {
+            @include position(absolute, 8%, 0, 0 , 0);
+            @include cssPrefix(transform, rotate(-29.3deg) translateY(90%));
+            @include cssPrefix(transition, all 0.5s);
+            content: '';
+            background: $color-gray;
+            width: 200%;
+            height: 100%;
+            opacity: 0.7;
+        }
+
+        &:hover::after {
+            @include cssPrefix(transform, rotate(-29.3deg) translateY(0));
+
+            @include respond-to("s") {
+                @include cssPrefix(transform, rotate(-31.3deg) translateY(0));
+            }
+        }
+    }
+
+    &__content {
+        
+        &--title {
+            @include textStyle(1.25rem, $color-black, 400, uppercase);
+        }
+
+        &--sub {
+            @include textStyle(0.85rem, $color-gray, 400, none);
+        }
+
+        &--desc {
+            @include textStyle(1rem, $color-black, 400, none);
+        }
+    }
+}
