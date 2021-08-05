@@ -1,0 +1,21 @@
+.about {
+    &__content {
+        @include paddingY(2rem);
+
+        &--image {
+            img {
+                width: 100%;
+            }
+        }
+
+        &--text {
+            h3 {
+                @include textStyle(1.7rem, $color-black, 500, uppercase);
+            }
+
+            p {
+                @include textStyle(1rem, $color-gray, 400, none);
+            }
+        }
+    }
+}
