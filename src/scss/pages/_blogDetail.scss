@@ -1,0 +1,85 @@
+.blog-detail {
+    &__content {
+        @include respond-to("s"){
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__news {
+        .news__image {
+            img {
+                @include cssPrefix(object-fit, cover);
+                width: 100%;
+                height: 4rem;
+            }
+        }
+
+        .news__title {
+            @include textStyle(0.8rem, $color-black, 500, uppercase);
+        }
+
+        .news__date {
+            @include textStyle(0.6rem, $color-gray, 400, none);
+        }
+    }
+
+    &__tag {
+        .tag__list {
+            flex-wrap: wrap;
+        }
+
+        .tag__item {
+            @include button($color-gray, $color-text, none);
+            @include textStyle(0.7rem, $color-text, 400, none);
+            @include paddingY(0.5rem);
+            @include paddingX(0.8rem);
+            @include marginY(0.5rem);
+            border-radius: 0.5rem;
+            margin-right: 1.5rem;
+
+            &:hover {
+                @include button($color-yellow, $color-text, none);
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__title {
+        @include textStyle(1rem, $color-black, 500, uppercase);
+    }
+
+    &__product {
+        .card-blog{
+            &__image {
+                img {
+                    max-height: 25rem;
+                }
+            }
+        } 
+    }
+
+    &__comment {
+        .comment__title {
+            @include textStyle(0.85rem, $color-gray, 500, none);
+            @include paddingX(1rem);
+            @include paddingY(0.5rem);
+            justify-content: space-between;
+            background: $color-bg-gray;
+            font-style: italic;
+            
+            p {
+                margin-bottom: 0;
+            }
+
+            a {
+                @include textStyle(0.85rem, $color-gray, 500, none);
+                text-decoration: underline;
+            }
+        }
+
+        .comment__desc{
+            @include textStyle(0.85rem, $color-gray, 500, none);
+            @include paddingA(1rem);
+        }
+    }
+}

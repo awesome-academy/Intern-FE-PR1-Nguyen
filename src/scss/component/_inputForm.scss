@@ -1,0 +1,12 @@
+.form-group {
+    label {
+        @include textStyle(0.7rem, $color-black, 400, none);
+        font-style: italic;
+    }
+
+    textarea {
+        @include border(0.1rem, $color-gray, all)
+        width: 100%;   
+        outline: none; 
+    }
+}
