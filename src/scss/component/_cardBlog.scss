@@ -1,4 +1,4 @@
-.cardBlog {
+.card-blog {
     &__image {
         @include position(relative);
         width: 100%;
@@ -47,19 +47,17 @@
             }
         }
     }
-
-    &__content {
-        
-        &--title {
-            @include textStyle(1.25rem, $color-black, 400, uppercase);
-        }
-
-        &--sub {
-            @include textStyle(0.85rem, $color-gray, 400, none);
-        }
-
-        &--desc {
-            @include textStyle(1rem, $color-black, 400, none);
-        }
+   
+    &__title {
+        @include textStyle(1.25rem, $color-black, 400, uppercase);
     }
+
+    &__sub {
+        @include textStyle(0.85rem, $color-gray, 400, none);
+    }
+
+    &__desc {
+        @include textStyle(1rem, $color-black, 400, none);
+    }
+    
 }
