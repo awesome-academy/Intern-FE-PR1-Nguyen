@@ -1,0 +1,12 @@
+.breadcrumb {
+    background-color: transparent;
+
+    &-item {
+        @include textStyle(0.8rem, $color-gray, 400, none);
+
+        &:hover {
+            cursor: pointer;
+            color: $color-yellow;
+        }  
+    }
+}

@@ -1,7 +1,7 @@
 .header {
     @include position(relative);
     min-width: 100%;
-    background: $color-header;
+    background: $color-gray;
     z-index: 10;
     
     &__absolute {

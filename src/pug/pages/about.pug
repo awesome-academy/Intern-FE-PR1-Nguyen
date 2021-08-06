@@ -1,0 +1,16 @@
+extend ../base/base.pug
+block toppage
+    - const title = "Giới thiệu"
+    - const currentUrl = "/about"
+block content 
+    section.about 
+        .container.about__container
+            +breadcrumb("Trang chủ", "Giới thiệu")
+            +introHead("giới thiệu", "title")
+            .about__content.d-flex 
+                .about__content--image.col-md-6.col-12
+                    img(src="assets/img/home-image1.jpg", alt="")
+
+                .about__content--text.col-md-6.col-12
+                    h3 chào mừng đến với wine house 
+                    p Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn.Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi,<br/> Sản phẩm được đóng chai dung tích 750ml.Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750ml.Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả với độ rượu nhẹ, bọt ga đầy trắng mịn. Vang Nổ thăng long tạo cảm giác hương phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750ml...
