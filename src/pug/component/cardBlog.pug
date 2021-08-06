@@ -1,11 +1,11 @@
 mixin cardBlog(src, alt, title, sub, desc)
-    .cardBlog.text-left.col-md-6.col-12
-        .cardBlog__image 
+    .card-blog.text-left
+        .card-blog__image 
             img(src=src, alt=alt)
             i.fas.fa-link
-        .cardBlog__content.mt-4
-            h3.cardBlog__content--title=title 
-            p.cardBlog__content--sub=sub
-            p.cardBlog__content--desc=desc 
+        .card-blog__content.mt-4
+            h3.card-blog__title=title 
+            p.card-blog__sub=sub
+            p.card-blog__desc=desc 
             a(href="#" class="card--link") Read more 
             

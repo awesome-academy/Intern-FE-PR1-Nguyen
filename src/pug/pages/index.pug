@@ -66,7 +66,8 @@ block content
                     +introHead("tin tức và blog", "heading")
                     .d-md-flex.mt-4
                         each itemBlog in homeBlog
-                            +cardBlog(itemBlog.name, itemBlog.alt, itemBlog.title, itemBlog.sub, itemBlog.desc)
+                            .col-md-6.col-12
+                                +cardBlog(itemBlog.name, itemBlog.alt, itemBlog.title, itemBlog.sub, itemBlog.desc)
                 .customerContainer.col-md-4.col-12.text-center
                     +introHead("khách hàng", "heading")
                     .customerContainer__content 

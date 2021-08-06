@@ -1,0 +1,13 @@
+extend ../base/base.pug
+block toppage
+    - const title = " Blog "
+    - const currentUrl = "/blog"
+block content
+    section.blog 
+        .container.blog_container 
+            +breadcrumb("Trang chủ", "Blog")
+            +introHead("blog", "title")
+            .blog__list.d-flex.mt-3
+                each itemBlog in blogList
+                    .col-lg-4.col-md-6.col-12.mt-3
+                        +cardBlog(itemBlog.img, itemBlog.alt, itemBlog.title, itemBlog.sub, itemBlog.desc, col-lg-3 )
