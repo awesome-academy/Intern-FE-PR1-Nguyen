@@ -1,0 +1,10 @@
+table {
+    th {
+        @include textStyle(1.1rem, $color-black, 400, uppercase);  
+        text-align: center;
+    }
+
+    td {
+        vertical-align: middle;
+    }
+}   

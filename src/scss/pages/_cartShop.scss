@@ -1,0 +1,12 @@
+.cart {
+    &__button {
+        text-align: center;
+        justify-content: flex-end;
+        
+        .button {
+            &:nth-child(2) {
+                @include marginA(1.5rem);
+            }
+        }
+    }
+}
