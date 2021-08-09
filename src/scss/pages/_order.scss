@@ -1,0 +1,28 @@
+.order {
+    &__title {
+        @include textStyle(1.1rem, $color-black, 400, uppercase);
+    }
+
+    &__contact {
+        @include paddingA(1.5rem);
+        @include border(0.1rem, $color-gray, all);
+        height: 100%;
+        background: $color-bg-gray;
+    }
+
+    &__item {
+        p {
+            @include textStyle(0.8rem, $color-black, 400, none);
+        }
+    }
+    &__status {
+        @include position(relative);
+        @include paddingX(1rem);
+
+        &::after {
+            @include position(absolute);
+            @include paddingX(1rem); 
+            content: "|";
+        }
+    }
+}

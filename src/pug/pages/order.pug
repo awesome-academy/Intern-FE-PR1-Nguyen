@@ -1,0 +1,39 @@
+extend ../base/base.pug
+block toppage
+    - const title = "Đơn Hàng"
+    - const currentUrl = "/order"
+block content 
+    section.order
+        .container.order__container 
+            +breadcrumb("Trang chủ", "Danh sách đơn hàng")
+            +introHead("đơn hàng", "title")
+            .order__content.d-md-flex.pt-5
+                .order__table.col-md-9
+                    .table-responsive
+                        table.table.table-bordered
+                            h3.order__title danh sách đơn hàng
+                            p.py-3 Trạng thái 
+                                each item in statusOrder
+                                    span.order__status=item
+                            thead
+                                th(scope="col") stt 
+                                th(scope="col") mã hóa đơn/ ngày mua hàng
+                                th(scope="col") kho nhận hàng 
+                                th(scope="col") số sp 
+                                th(scope="col") tổng tiền
+                                th(scope="col") tình trạng
+                                th(scope="col") thao tác
+                            tbody
+                                each item in orderList
+                                    +orderTable(item)
+                .order__contact.col-md-3
+                    h3.order__title thông tin khách hàng
+                    ul.order__list 
+                        li.order__item 
+                            i(class="fas fa-user")  GiangLe 
+                            p Leanhgiang89@gmail.com
+                        li.order__item 
+                            i(class="fas fa-map-marker-alt")  Tòa nhà Hà Nội group 442 Đội Cấn, Ba Đình Hà Nội
+                        li.order__item
+                            i(class="fas fa-phone-alt")  (04) 3786 8904
+                    a(href="#") Chi tiết địa chỉ 

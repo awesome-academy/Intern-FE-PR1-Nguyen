@@ -1,0 +1,15 @@
+.cart__row {
+    td {
+        @include textStyle(1rem, $color-black, 400, uppercase);
+        vertical-align: middle;
+        text-align: center;
+        
+        img {
+            width: 6.25rem;
+        }
+
+        &:nth-child(3), &:nth-child(5) {
+            color: $color-yellow;
+        }
+    }
+}

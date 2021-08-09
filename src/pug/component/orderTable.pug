@@ -1,0 +1,11 @@
+mixin orderTable(item)
+    tr.order__row 
+        td(scope="row")= item.id
+        td=`${item.mdh} - ${item.day}`
+             p 01:36 14/03/2015 
+        td=item.address
+        td=item.amount 
+        td=item.total
+        td=item.status
+        td=item.operations
+        

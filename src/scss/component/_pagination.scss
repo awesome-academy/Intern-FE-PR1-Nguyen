@@ -1,0 +1,20 @@
+.pagination {
+    .page-item {
+        @include marginX(0.5rem);
+    }
+
+    &__previous, &__next {
+        background: $color-black;
+        color: $color-text;
+    }
+
+    .page-item.active .page-link {
+        @include border(0.1rem, $color-gray, all);
+        background-color: $color-gray;
+        color: $color-text;
+    }
+
+    .page-number {
+        color: $color-black;
+    }
+}

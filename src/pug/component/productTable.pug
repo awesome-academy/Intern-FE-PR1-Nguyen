@@ -1,0 +1,10 @@
+mixin productTable(item)
+    tr.cart__row
+        td(scope="row")
+            img(src=item.img, alt=item.alt)
+        td=item.name 
+        td=item.price 
+        td=item.amount
+        td=item.total 
+        td 
+            i(class="fas fa-trash-alt")

@@ -1,0 +1,26 @@
+extend ../base/base.pug
+block toppage 
+    - const title = "Giỏ hàng"
+    - const currentUrl = "/cartShop"
+block content 
+    section.cart 
+        .container.cart__container
+            +breadcrumb("Trang chủ", "Sản phẩm", "Giỏ hàng")
+            +introHead("giỏ hàng", "title")
+            .cart__table.mt-3    
+                .table-responsive 
+                    table.table.table-bordered 
+                        thead
+                            th(scope="col") ảnh
+                            th(scope="col") tên sản phẩm
+                            th(scope="col") giá 
+                            th(scope="col") số lượng 
+                            th(scope="col") tổng hợp
+                            th(scope="col") xóa
+                        tbody
+                            each itemCart in cartList 
+                                +productTable(itemCart)
+            .cart__button.d-md-flex 
+                +button("tiếp tục mua hàng")
+                +button("xóa")
+                +button("cập nhật")
