@@ -1,0 +1,13 @@
+.login {
+    &__title {
+        justify-content: space-between;
+    }
+
+    &__sub {
+        @include textStyle(0.8rem, $color-black, 400, none);
+    }
+
+    &__form {
+        @include paddingA(3rem);
+    }
+}

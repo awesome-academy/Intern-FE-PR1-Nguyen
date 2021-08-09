@@ -3,6 +3,6 @@ mixin formGroup(nameLabel, id, type, placeholder, isInput)
         label(for=id class="col-sm-2")=nameLabel 
         .col-sm-10 
             if(isInput)
-                input(type=type, class="form-control", id=id, placeholder=placeholder)
+                input(type=type, class="form-control", id=id, placeholder=placeholder required)
             else 
                 textarea(cols="30", rows="10")   
