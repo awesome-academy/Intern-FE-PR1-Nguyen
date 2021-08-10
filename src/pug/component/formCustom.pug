@@ -1,11 +1,11 @@
-mixin formCustom(labelName, idInput, type)
+mixin formCustom(labelName, idInput, type, value)
     .form-rows
         if type == "checkbox"
             .form-check.form-group.col-sm-10.offset-sm-2
-                input(class="form-check-input" type=type id=idInput required)
+                input(class="form-check-input" type=type id=idInput  required)
                 label(class="form-check-label" for=idInput)=labelName
         else 
             .form-group.row 
                 label(class="col-sm-2 col-form-label col-form-label-sm" for=idInput)=labelName
                 .col-sm-10
-                    input(type=type class="form-control form-control-sm" id=idInput required)
+                    input(type=type class="form-control form-control-sm" value=value id=idInput required)

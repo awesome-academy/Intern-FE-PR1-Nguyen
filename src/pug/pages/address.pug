@@ -1,0 +1,65 @@
+extend ../base/base.pug
+block toppage
+    - const title = "Địa chỉ khách hàng"
+    - const currentUrl = "/address"
+block content
+    section.address
+        .container.address__container
+            +breadcrumb("Trang chủ", "Địa chỉ")
+            +introHead("địa chỉ", "title")
+            .address__form.d-md-flex.mt-3
+                .address__form--left.w-100 
+                    form
+                        h3.form__caption địa chỉ của bạn
+                        +formCustom("Tên", "nameAddress", "text", "Giang")   
+                        +formCustom("Họ & tên đệm", "fullname", "text", "Lê Anh")   
+                        +formCustom("Công ty", "company", "text", "Cổ phần công nghệ DKT")   
+                        +formCustom("Địa chỉ", "Address", "text", "Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội")   
+                        +formCustom("Thành phố", "nameAddress", "text", "Hà Nội")   
+                        +formCustom("Quốc Tịch", "nationality", "text", "Việt Nam")   
+                        +formCustom("Postal/Zip Code", "zipCode", "number", "2300089")   
+                        +formCustom("Phone", "yourPhone", "number", "0974554928")   
+                        +formCustom("Đặt làm địa chỉ mặc định", "addressCheck", "checkbox")
+                        .address__button.d-md-flex 
+                            +button("Chỉnh sửa địa chỉ")
+                            +button("Xóa")
+                .address__form--left.w-100
+                    form
+                        a.form__link Thêm địa chỉ
+                        +formCustom("Tên", "nameAddress", "text", "Giang")   
+                        +formCustom("Họ & tên đệm", "fullname", "text", "Lê Anh")   
+                        +formCustom("Công ty", "company", "text", "Cổ phần công nghệ DKT")   
+                        +formCustom("Địa chỉ", "Address", "text", "Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội")   
+                        +formCustom("Thành phố", "nameAddress", "text", "Hà Nội")   
+                        +formCustom("Quốc Tịch", "nationality", "text", "Việt Nam")   
+                        +formCustom("Postal/Zip Code", "zipCode", "number", "2300089")   
+                        +formCustom("Phone", "yourPhone", "number", "0974554928")   
+                        +formCustom("Đặt làm địa chỉ mặc định", "addressCheck", "checkbox")
+                        .address__button.d-md-flex 
+                            +button("Chỉnh sửa địa chỉ")
+                            +button("Xóa")   
+            .address__info.col-md-6
+                form
+                    +formCustom("Tên", "nameAddress", "text", "Giang")   
+                    +formCustom("Họ & tên đệm", "fullname", "text", "Lê Anh")   
+                    +formCustom("Công ty", "company", "text", "Cổ phần công nghệ DKT")   
+                    +formCustom("Địa chỉ", "Address", "text", "Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội")   
+                    +formCustom("Thành phố", "nameAddress", "text", "Hà Nội")   
+                    +formCustom("Quốc Tịch", "nationality", "text", "Việt Nam")   
+                    +formCustom("Postal/Zip Code", "zipCode", "number", "2300089")   
+                    +formCustom("Phone", "yourPhone", "number", "0974554928")
+                    .address__link.text-right 
+                        a(href="#") Thêm địa chỉ
+            .address__info.col-md-6
+                form
+                    +formCustom("Tên", "nameAddress", "text", "Giang")   
+                    +formCustom("Họ & tên đệm", "fullname", "text", "Lê Anh")   
+                    +formCustom("Công ty", "company", "text", "Cổ phần công nghệ DKT")   
+                    +formCustom("Địa chỉ", "Address", "text", "Tòa nhà Hà Nội Group, 442 Đội Cấn, Ba Đình, Hà Nội")   
+                    +formCustom("Thành phố", "nameAddress", "text", "Hà Nội")   
+                    +formCustom("Quốc Tịch", "nationality", "text", "Việt Nam")   
+                    +formCustom("Postal/Zip Code", "zipCode", "number", "2300089")   
+                    +formCustom("Phone", "yourPhone", "number", "0974554928")
+                    .address__link.text-right 
+                        a(href="#") Thêm địa chỉ
+                        

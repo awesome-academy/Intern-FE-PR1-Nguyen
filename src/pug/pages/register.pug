@@ -13,16 +13,16 @@ block content
                 .register__form 
                     form
                         h3.mb-3.form__caption thông tin cá nhân 
-                        +formCustom("Tên trước *", "firstName", "text")
-                        +formCustom("Tên sau *", "lastName", "text")     
-                        +formCustom("Email *", "email", "email")     
-                        +formCustom("Password *", "pasword", "text")     
-                        +formCustom("Đăng ký nhận bản tin", "newsRegister", "checkbox")
+                        +formCustom("Tên trước *", "firstName", "text", none)
+                        +formCustom("Tên sau *", "lastName", "text", none)     
+                        +formCustom("Email *", "email", "email", none)     
+                        +formCustom("Password *", "pasword", "text", none)     
+                        +formCustom("Đăng ký nhận bản tin", "newsRegister", "checkbox", none)
                 .person_form.mt-3
                     form
                         h3.mb-3.form__caption thông tin đăng nhập
-                        +formCustom("Mật khẩu *", "matkhau", "password")
-                        +formCustom("Xác nhận mật khẩu *", "confirmPasword", "password")
+                        +formCustom("Mật khẩu *", "matkhau", "password", none)
+                        +formCustom("Xác nhận mật khẩu *", "confirmPasword", "password", none)
                         .person__button.d-md-flex
                             +button("Gửi")
                             +button("Quay lại")
