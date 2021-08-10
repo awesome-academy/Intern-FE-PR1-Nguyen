@@ -1,0 +1,9 @@
+form {
+    .form__caption {
+        @include textStyle(1rem, $color-black, 400, uppercase);
+    }
+}
+
+.form--border {
+    @include border(0.1rem, $color-gray, all);
+}

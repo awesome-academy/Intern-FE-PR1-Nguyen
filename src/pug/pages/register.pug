@@ -1,0 +1,28 @@
+extend ../base/base.pug
+block toppage 
+    - const title = " Đăng Ký"
+    - const currentUrl = "/register"
+block content 
+    section.register 
+        .container.register__container
+            +breadcrumb("Trang chủ", "Đăng ký")
+            .register__title.d-md-flex
+                +introHead("đăng ký", "title")
+                +button("đăng nhập")
+            .register__content.form--border
+                .register__form 
+                    form
+                        h3.mb-3.form__caption thông tin cá nhân 
+                        +formCustom("Tên trước *", "firstName", "text")
+                        +formCustom("Tên sau *", "lastName", "text")     
+                        +formCustom("Email *", "email", "email")     
+                        +formCustom("Password *", "pasword", "text")     
+                        +formCustom("Đăng ký nhận bản tin", "newsRegister", "checkbox")
+                .person_form.mt-3
+                    form
+                        h3.mb-3.form__caption thông tin đăng nhập
+                        +formCustom("Mật khẩu *", "matkhau", "password")
+                        +formCustom("Xác nhận mật khẩu *", "confirmPasword", "password")
+                        .person__button.d-md-flex
+                            +button("Gửi")
+                            +button("Quay lại")
