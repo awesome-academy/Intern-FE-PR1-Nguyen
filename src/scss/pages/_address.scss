@@ -1,0 +1,27 @@
+.address {
+    &__form {
+        gap: 2rem;
+    }
+
+    &__button {
+        text-align: center;
+
+        .button:nth-child(1) {
+            @include marginA(1.5rem);
+
+            .button--link {
+                background-color: $color-blue;
+            }
+        }
+    }
+
+    &__info {
+        margin-top: 2rem;
+        
+        form {
+            .form-control {
+                border: none;
+            }
+        }
+    }
+}

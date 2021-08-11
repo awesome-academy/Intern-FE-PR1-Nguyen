@@ -2,6 +2,11 @@ form {
     .form__caption {
         @include textStyle(1rem, $color-black, 400, uppercase);
     }
+
+    .form__link {
+        cursor: pointer;
+        text-decoration: underline;
+    }
 }
 
 .form--border {
