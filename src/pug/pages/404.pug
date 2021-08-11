@@ -1,0 +1,33 @@
+doctype html 
+block toppage
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- Bs css
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous")
+        //- font awesome
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css')
+        link(rel="stylesheet", href="css/style.css")
+        title= "404 Not Found" + " | Wine Shop - Since 1980"
+    body
+        block content 
+            section.notfound 
+                .notfound__img
+                    img(src="/assets/img/404-NotFound.jpg", alt="404 not found")
+                .notfound__content
+                    .notfound__nav.d-md-flex 
+                        .notfound__logo 
+                            img(src="/assets/img/logo-light.png", alt="logo")
+                        .notfound__menu 
+                            ul.notfound__list.d-md-flex.align-items-center
+                                li.notfound__item 
+                                    a(href="index.html" class="notfound__link text-dark") TRANG CHỦ
+                                li.notfound__item.mx-3
+                                    a(href="contact.html" class="notfound__link text-dark")  LIÊN HỆ
+                                li.notfound__item
+                                    form.notfound__form
+                                        input(type="text", class="form-control" required)
+                                        button.notfound__button 
+                                             i(class="fas fa-search")

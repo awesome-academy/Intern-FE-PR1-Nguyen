@@ -1,0 +1,9 @@
+.contact{
+    &__item {
+        @include textStyle(0.9rem, $color-gray, 400, none);
+    }
+
+    &__title {
+        @include textStyle(1.1rem, $color-gray, 700, uppercase);
+    }
+}
