@@ -1,0 +1,94 @@
+extend ../base/base.pug
+block toppage
+    - const title = "Chi tiết sản phẩm"
+    - const currentUrl = "/detail"
+block content 
+    section.detail 
+        .container.detail__container 
+            +breadcrumb("Trang chủ", "Sản phẩm", "Rượu vang đỏ")
+            .detail__content.row
+                .detail__image.col-md-6
+                    .detail__slide.row
+                        .col-2
+                            ul.detail__list
+                                li.detail__up
+                                    i(class="fas fa-arrow-up")
+                                each imgItem in detailImgList
+                                    li.detail__item 
+                                            img(src=imgItem.img, alt=imgItem.alt)
+                                li.detail__down
+                                    i(class="fas fa-arrow-down")
+                        .col-10
+                            .detail__img
+                                img(src="/assets/img/Product/10.jpg", alt="detail img")                  
+                .detail__product.col-md-6
+                    .detail__title 
+                        +introHead("rượu nho năm 1987", "title")
+                        h3.detail__price 330.000đ
+                    .detail__rating
+                        each itemRating in ratingLists
+                            i(class=itemRating)  
+                        span.px-2 | Review(5)
+                        span | Add Your Review
+                    .detail__color.mt-4
+                        h3.detail__title màu sắc
+                        ul.color__list.d-flex
+                            li.color__item
+                                    label(for="colorYellow" id="yellow")
+                                    input(type="radio", name="color" id="colorYellow")
+                            li.color__item
+                                    label(for="colorBlack" id="black")
+                                    input(type="radio", name="color" id="colorBlack" checked)
+                            li.color__item
+                                    label(for="colorRed" id="red")
+                                    input(type="radio", name="color" id="colorRed")
+                    .detail__size 
+                        h3.detail__title kích cỡ
+                        select.form-select.form-select-sm.pr-3
+                            each itemOption in sizeLists
+                                option(value=itemOption)=itemOption
+                    .detail__amount.mt-4 
+                        h3.detail__title số lượng
+                        form.detail__form
+                            input(type="text", class="amount__input text-center", value="3")
+                            button.amount--down.amount__button 
+                                i(class="fas fa-minus")
+                            button.amount--up.amount__button 
+                                i(class="fas fa-plus")
+                        +button("add to cart")
+                    .detail__action 
+                        ul.action__list.d-flex
+                            li.action__item 
+                                i(class="fas fa-heart")  Yêu thích
+                            li.action__item.mx-2
+                                i(class="fas fa-signal")  So sánh 
+                            li.action__item 
+                                i(class="fas fa-envelope")  Email
+                    .detail__description
+                        h3.detail__title mô tả
+                        p Một hợp chất có trong rượu vang được gọi là resveratro có khả năng làm tăng tối đa tuổi thọ. Resveratro còn có khả năng ngăn chặn mật độ ôxy hoá của protein béo.
+            .detail__nav.d-md-flex.mt-5
+                .detail__tabs.col-md-8
+                    ul(class="nav nav-tabs" id="myTab" role="tablist")
+                        each itemContent in tabContent
+                            if(itemContent.isActive)
+                                li(class="nav-item" role="presentation")
+                                    a(class="nav-link active" id=`${itemContent.id}-tab` data-toggle="tab" href=`#${itemContent.id}` role="tab" aria-controls=itemContent.id aria-selected="true")=itemContent.name
+                            else 
+                                li(class="nav-item")
+                                    a(class="nav-link" id=`${itemContent.id}-tab` data-toggle="tab" href=`#${itemContent.id}` role="tab" aria-controls=itemContent.id aria-selected="false")=itemContent.name
+                    .tab-content#myTabContent.py-3
+                        each itemDesc in tabDesc
+                            if(itemDesc.isActive)
+                                div(class="tab-pane fade show active" id=itemDesc.id role="tabpanel" aria-labelledby=`${itemDesc.id}-tab`)=itemDesc.source
+                            else 
+                                div( class="tab-pane fade" id=itemDesc.id role="tabpanel" aria-labelledby=`${itemDesc.id}-tab`)=itemDesc.source
+                .nav__image.col-md-4 
+                    img(src="/assets/img/home-image7.jpg", alt="detail image",class="nav__image--main")
+                    img(src="/assets/img/ruounho.png", alt="detail image" class="nav__image--inner")
+            .product-same.text-center.py-5 
+                .newProducts__title
+                    +introHead("sản phẩm liên quan", "heading")
+                .newProducts__list.d-md-flex.col-12
+                    each productItem in productList
+                        +productItem(productItem.src,productItem.alt,"rượu vang đà lạt", "370.000đ", "450.000đ", "add to card")

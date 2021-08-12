@@ -1,0 +1,150 @@
+.detail {
+    &__title {
+        @include textStyle(1.2rem, $color-gray, 400, uppercase);
+    }
+
+    &__price {
+        color: $color-yellow;
+    }
+
+    &__image {
+        @include border(0.1rem, $color-bg-gray, all);
+    }
+
+    &__list {
+        @include border(0.1rem, $color-bg-gray, right);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    &__rating, &__action, &__description p, .tab-pane {
+        color: $color-gray;
+    }
+
+    &__up {
+        color: $color-yellow;
+    }
+
+    &__nav {
+        gap: 2rem;
+    }
+
+    &__item {
+        @include cssPrefix(transition, all 0.5s);
+        @include marginY(1rem);
+        width: 50%;
+        height: 10%;
+
+        img {
+            @include cssPrefix(object-fit, cover);
+            width: 100%;
+            height: 100%;
+        }
+
+        &:nth-child(4) {
+            @include border(0.1rem, $color-yellow, all);
+        }
+
+        &:hover {
+            @include border(0.1rem, $color-yellow, all);
+        }
+    }
+
+    &__img {
+        img {
+            width: 100%;
+        }
+    }
+
+    .color__list {
+        .color__item {
+            label {
+                width: 1.3rem;
+                height: 1.3rem;
+                
+                &:hover {
+                    @include border(0.15rem, $color-gray, all);
+                }
+            }
+
+            #yellow {
+                background-color: $color-yellow;
+            }
+
+            #black {
+                @include border(0.15rem, $color-gray, all);
+                background-color: $color-black;
+            }
+
+            #red {
+                background-color: $color-hot;
+            }
+
+            input {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__form {
+        @include position(relative);
+        width: 20%;
+
+        @include respond-to("s"){
+            width: 40%;
+        }
+    }
+
+    &__amount {
+        .amount__input {
+            @include border(0.15rem, $color-bg-gray, all);
+            width: 100%;
+        }
+
+        .amount__button {
+            @include paddingX(0.5rem);
+            height: 100%;
+            border: none;
+            outline: none;
+            color: $color-gray;
+        }
+
+        .amount--down {
+            @include position(absolute, 0, 0);
+        }
+
+        .amount--up {
+            @include position(absolute, 0, null, 0);
+        }
+
+        .button {
+            @include position(relative, -1.7rem, null, -9rem);
+            @include marginY(0);
+            
+            @include respond-to("s"){
+                @include marginY(1rem);
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+
+    &__nav {
+        .nav__image {
+            @include position(relative);
+
+            &--main {
+                width: 100%;
+            }
+
+            &--inner {
+                @include position(absolute, 32%, 50%);
+                @include cssPrefix(transform, translate(-50%, -50%));
+                z-index: 10;
+            }
+        }
+    }
+}
