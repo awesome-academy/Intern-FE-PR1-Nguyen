@@ -1,0 +1,42 @@
+.product-details {
+    .sidebar__list {
+        .sidebar__item {
+            @include textStyle(1rem, $color-gray, 400, none);
+        }
+
+        .sidebar__item:nth-child(4) {
+            list-style: circle;
+            color: $color-yellow;
+            margin-left: 1rem;
+        }
+    }
+
+    &__nav {
+        .nav {
+            .nav-link.active {
+                color: $color-yellow;
+                background-color: transparent;
+            }
+
+            .nav-link {
+                color: $color-gray;
+            }
+        }
+    }
+
+    .pagination {
+        .page-link {
+            color: $color-gray;
+            background-color: transparent;
+            border: none;
+        }
+
+        .page-item.active {
+           .page-link {
+                color: $color-yellow;
+                background-color: transparent;
+                border: none;
+           }
+        }
+    }
+}

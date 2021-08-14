@@ -1,0 +1,15 @@
+mixin listProduct(src, alt, name, price, sub)
+    .list-Product.col-12.d-md-flex.mt-4 
+        .list-Product__img
+            img(src=src, alt=alt)
+        .list-Product__content 
+            .list-Product__text
+                h6=name 
+                h3=price 
+                p=sub 
+            .list-Product__action.d-md-flex.align-items-center 
+                +button("add to cart")
+                ul.list-Product__comment.d-flex.mb-0.ml-5
+                    i.fas.fa-heart.mr-3  Yêu thích
+                    i.fas.fa-signal  So sánh
+                    

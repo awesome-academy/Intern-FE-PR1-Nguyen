@@ -23,33 +23,12 @@
         }
     }
 
-    &__tag {
-        .tag__list {
-            flex-wrap: wrap;
-        }
-
-        .tag__item {
-            @include button($color-gray, $color-text, none);
-            @include textStyle(0.7rem, $color-text, 400, none);
-            @include paddingY(0.5rem);
-            @include paddingX(0.8rem);
-            @include marginY(0.5rem);
-            border-radius: 0.5rem;
-            margin-right: 1.5rem;
-
-            &:hover {
-                @include button($color-yellow, $color-text, none);
-                cursor: pointer;
-            }
-        }
-    }
-
     &__title {
         @include textStyle(1rem, $color-black, 500, uppercase);
     }
 
     &__product {
-        .card-blog{
+        .card-blog {
             &__image {
                 img {
                     max-height: 25rem;
@@ -77,9 +56,28 @@
             }
         }
 
-        .comment__desc{
+        .comment__desc {
             @include textStyle(0.85rem, $color-gray, 500, none);
             @include paddingA(1rem);
         }
+    }
+}
+
+.tag__list {
+    flex-wrap: wrap;
+}
+
+.tag__item {
+    @include button($color-gray, $color-text, none);
+    @include textStyle(0.7rem, $color-text, 400, none);
+    @include paddingY(0.5rem);
+    @include paddingX(0.8rem);
+    @include marginY(0.5rem);
+    border-radius: 0.5rem;
+    margin-right: 1.5rem;
+
+    &:hover {
+        @include button($color-yellow, $color-text, none);
+        cursor: pointer;
     }
 }

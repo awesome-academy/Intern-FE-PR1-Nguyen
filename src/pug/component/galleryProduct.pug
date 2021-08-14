@@ -1,0 +1,10 @@
+mixin galleryProduct(src, alt, name, price, discount)
+    .gallery-Product.col-md-4.mt-4 
+        .list-Product__img
+            img(src=src, alt=alt)
+        .list-Product__content.text-center
+            .list-Product__text 
+                h6=name 
+                h3=price
+                    span.ml-2=discount 
+            +button("add to cart")

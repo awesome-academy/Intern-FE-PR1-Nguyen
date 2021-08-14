@@ -1,0 +1,26 @@
+.list-Product {
+    &__img {
+        img {
+            width: 100%;
+        }
+    }
+    
+    &__text {
+        h6 {
+            @include textStyle(1rem, $color-black, 500, uppercase);
+        }
+
+        h3 {
+            @include textStyle(1.3rem, $color-yellow, 400, none);
+        }
+
+        span {
+            @include textStyle(0.7rem, $color-gray, 400, none);
+            text-decoration: line-through;
+        }
+
+        p {
+            @include textStyle(0.8rem, $color-gray, 400, none);
+        }
+    }
+}

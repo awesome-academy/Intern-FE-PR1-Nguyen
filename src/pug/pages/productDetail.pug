@@ -1,0 +1,49 @@
+extend ../base/base.pug
+block toppage
+    - const title = "Chi tiết Sản Phẩm"
+    - const currentUrl = "/producDetail"
+block content 
+    section.product-details
+        .container.product-details__container 
+            +breadcrumb("Trang chủ", "Sản phẩm", "Rượu vang đỏ")
+            .product-details__banner 
+                img(src="/assets/img/list-image1.jpg", class="w-100", alt="banner product detail")
+            .product-details__content.d-md-flex.mt-4
+                .product-details__sidebar.col-md-4
+                    +introHead("danh mục sản phẩm", "title")
+                    ul.sidebar__list.py-3 
+                        each itemSidebar in sidebarLists 
+                            li.sidebar__item=itemSidebar
+                    +introHead("so sánh sản phẩm", "title")
+                    p.py-4 Bạn chưa có sản phẩm nào để so sánh 
+                    +introHead("tag sản phẩm", "title")
+                    ul.tag__list.d-md-flex
+                        each itemTag in tagBlog 
+                            li.tag__item.text-center=itemTag
+                    .sidebar__image 
+                        img(src="/assets/img/list-image2.jpg", alt="sidebar img")
+                .product-details__list.col-md-8
+                    .product-details__nav
+                        div(class="d-flex justify-content-between ")
+                            ul(class="nav nav-pills" id="pills-tab" role="tablist")
+                                each itemNav in navProducts 
+                                    if(itemNav.isActive)
+                                        li(class="nav-item" role="presentation")
+                                            a(class="nav-link active" id=`${itemNav.id}-tab` data-toggle="pill" href=`#${itemNav.id}` role="tab" aria-controls=itemNav.id aria-selected="true")
+                                                i(class=itemNav.name)
+                                    else 
+                                        li(class="nav-item" role="presentation")
+                                            a(class="nav-link" id=`${itemNav.id}-tab` data-toggle="pill" href=`#${itemNav.id}` role="tab" aria-controls=itemNav.id aria-selected="false")
+                                                i(class=itemNav.name)
+                            +pagination()           
+                        div(class="tab-content" id="pills-tabContent")
+                            each itemNav in navProducts
+                                if(itemNav.isActive)
+                                    div(class="tab-pane fade show active" id=itemNav.id role="tabpanel" aria-labelledby=`${itemNav.id}-tab`)
+                                        div(class="d-md-flex flex-wrap")
+                                            each itemTab in tabActive 
+                                                +galleryProduct(itemTab.img, itemTab.src, "Rượu vang đà lạt", "370.000đ", "450.000đ", "add to cart1")
+                                else 
+                                    div(class="tab-pane fade" id=itemNav.id role="tabpanel" aria-labelledby=`${itemNav.id}-tab`)
+                                        each itemTab in tabProducts 
+                                            +listProduct(itemTab.img, itemTab.alt, itemTab.name, itemTab.price, itemTab.sub)
