@@ -6,6 +6,15 @@
     
     &__absolute {
         @include position(absolute, 0);
+        background: $color-text;
+
+        .header--link {
+            @include textStyle(0.6rem, $color-gray, 400, none);
+        }
+
+        .header__icon, .header__search i {
+            color: $color-gray;
+        }
     }
 
     &__content {
